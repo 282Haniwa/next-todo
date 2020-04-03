@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { RootStyles } from '../styles/common';
-import Button from '../components/Button';
-import Hello from '../components/Hello';
 import { useDispatch, useSelector } from 'react-redux';
-import { add, reset } from '../stores/counter';
+import { RootStyles } from '../../styles/common';
+import Button from './components/Button';
+import Hello from './components/Hello';
+import { add, reset } from '../../stores/counter';
 
 export default () => {
   const dispatch = useDispatch();
