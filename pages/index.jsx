@@ -8,6 +8,9 @@ export default () => (
       <Link href="/counter">
         <a>カウンターAPP</a>
       </Link>
+      <Link href="/todo-components">
+        <a>コンポーネントリスト</a>
+      </Link>
     </RootStyles>
   </>
 );
