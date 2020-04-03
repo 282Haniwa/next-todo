@@ -33,6 +33,5 @@ const Button = styled.button`
 `;
 
 export default props => {
-  const { variant, ...other } = props;
-  return <Button {...other} />;
+  return <Button {...props} />;
 };
