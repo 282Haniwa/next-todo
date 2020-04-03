@@ -6,7 +6,6 @@ import { TextArea } from '../../components';
 export default props => {
   const [value, setValue] = useState('');
   const handleChangeTextArea = value => {
-    console.log(value);
     setValue(value);
   };
 
