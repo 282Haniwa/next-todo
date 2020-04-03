@@ -12,7 +12,7 @@ export default () => {
 
   const handleClickCounter = () => {
     dispatch(add(1));
-    setHelloList([...helloList, <Hello />]);
+    setHelloList([...helloList, <Hello key={helloList.length} />]);
   };
 
   const handleClickReset = () => {
