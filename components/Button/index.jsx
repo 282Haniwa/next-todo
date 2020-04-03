@@ -33,6 +33,6 @@ const Button = styled.button`
 `;
 
 export default props => {
-  const { children, icon, variant, onClick } = props;
-  return <Button {...props} />;
+  const { variant, ...other } = props;
+  return <Button {...other} />;
 };
