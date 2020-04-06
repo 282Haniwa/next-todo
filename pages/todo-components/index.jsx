@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
-import { TextArea, TextField, SelectBox, Button } from '../../components';
+import { TextArea, TextField, SelectBox, Button, IconButton } from '../../components';
 
 const Root = styled(RootStyles)`
   & > * {
@@ -64,6 +64,9 @@ export default () => {
         <Button variant="main">Button</Button>
         <Button variant="lime">Button</Button>
         <Button variant="outline">Button</Button>
+        <hr width="100%" />
+        <span>IconButton</span>
+        <IconButton></IconButton>
         <hr width="100%" />
       </Root>
     </>
