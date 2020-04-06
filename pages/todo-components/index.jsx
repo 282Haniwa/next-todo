@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
-import { TextArea } from '../../components';
+import { TextArea, Button } from '../../components';
 
-export default props => {
+const Root = styled(RootStyles)`
+  > * {
+    margin-top: 16px;
+  }
+`;
+
+export default () => {
   const [value, setValue] = useState('');
   const handleChangeTextArea = value => {
     setValue(value);
@@ -11,10 +18,18 @@ export default props => {
 
   return (
     <>
-      <RootStyles>
+      <Root>
         <span>Components List</span>
+        <hr width="100%" />
+        <span>TextArea</span>
         <TextArea label="label" onChange={handleChangeTextArea} value={value}></TextArea>
-      </RootStyles>
+        <hr width="100%" />
+        <span>Button</span>
+        <Button variant="main">Button</Button>
+        <Button variant="lime">Button</Button>
+        <Button variant="outline">Button</Button>
+        <hr width="100%" />
+      </Root>
     </>
   );
 };
