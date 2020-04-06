@@ -50,10 +50,10 @@ const ExpandIcon = styled.div`
 `;
 
 export default props => {
-  const { label, list = [], value: defaultValue, onChange } = props;
-  const [value, setValue] = useState(list.indexOf(defaultValue) + 1 || 0);
+  const { label, items = [], value: defaultValue = 0, onChange } = props;
+  const [value, setValue] = useState(items.indexOf(defaultValue) + 1 || 0);
 
-  const handleChange = event => {
+  const handleChange = (event, value) => {
     setValue(event.target.value);
     onChange &&
       onChange(event.target[event.target.selectedIndex].dataset.value, event.target.value, event);
@@ -65,10 +65,10 @@ export default props => {
       <SelectWrapper>
         <Select value={value} onChange={handleChange}>
           <option value={0}></option>
-          {list.map((item, index) => {
+          {items.map(item => {
             return (
-              <option key={index + 1} value={index + 1} data-value={item}>
-                {item}
+              <option key={item.value} value={item.value} data-value={item.text}>
+                {item.text}
               </option>
             );
           })}

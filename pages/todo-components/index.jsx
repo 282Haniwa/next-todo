@@ -10,7 +10,20 @@ const Root = styled(RootStyles)`
   }
 `;
 
-const selectList = ['仕事', '趣味', 'その他'];
+const selectList = [
+  {
+    text: '選択肢1',
+    value: '1',
+  },
+  {
+    text: '選択肢2',
+    value: '2',
+  },
+  {
+    text: '選択肢255',
+    value: '255',
+  },
+];
 
 export default () => {
   const [textFieldValue, setTextFieldValue] = useState('');
@@ -42,7 +55,7 @@ export default () => {
         <span>SelectBox</span>
         <SelectBox
           label="label"
-          list={selectList}
+          items={selectList}
           onChange={handleChangeSelectBox}
           value={selectValue}
         ></SelectBox>
