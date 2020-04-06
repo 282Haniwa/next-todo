@@ -5,7 +5,7 @@ import { RootStyles } from '../../styles/common';
 import { TextArea, Button } from '../../components';
 
 const Root = styled(RootStyles)`
-  * {
+  > * {
     margin-top: 16px;
   }
 `;
