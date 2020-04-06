@@ -28,6 +28,8 @@ export default () => {
         <hr width="100%" />
         <span>TextArea</span>
         <TextArea label="label" onChange={handleChangeTextArea} value={textAreaValue} />
+        <hr width="100%" />
+        <span>TextField</span>
         <TextField label="label" onChange={handleChangeTextField} value={textFieldValue} />
         <hr width="100%" />
         <span>Button</span>
