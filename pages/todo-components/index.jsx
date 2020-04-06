@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { RootStyles } from '../../styles/common';
-import { TextArea } from '../../components';
+import { TextField, TextArea } from '../../components';
 
 export default props => {
-  const [value, setValue] = useState('');
+  const [textFieldValue, setTextFieldValue] = useState('');
+  const [textAreaValue, setTextAreaValue] = useState('');
+
+  const handleChangeTextField = value => {
+    setTextFieldValue(value);
+  };
+
   const handleChangeTextArea = value => {
-    setValue(value);
+    setTextAreaValue(value);
   };
 
   return (
     <>
       <RootStyles>
         <span>Components List</span>
-        <TextArea label="label" onChange={handleChangeTextArea} value={value}></TextArea>
+        <TextField label="label" onChange={handleChangeTextField} value={textFieldValue} />
+        <TextArea label="label" onChange={handleChangeTextArea} value={textAreaValue} />
       </RootStyles>
     </>
   );
