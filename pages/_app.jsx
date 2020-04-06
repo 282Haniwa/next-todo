@@ -16,6 +16,7 @@ const theme = {
   colors: {
     border: '#DADADA',
     main: '#FF5470',
+    black: '#00214D',
     gray: '#888888',
     lime: '#00EBC7',
   },

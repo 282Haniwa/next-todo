@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
-import { TextArea, SelectBox } from '../../components';
+import { TextArea, TextField, SelectBox, Button } from '../../components';
+
+const Root = styled(RootStyles)`
+  & > * {
+    margin-top: 16px;
+  }
+`;
 
 const selectList = ['仕事', '趣味', 'その他'];
 
-export default props => {
-  const [value, setValue] = useState('');
+export default () => {
+  const [textFieldValue, setTextFieldValue] = useState('');
+  const [textAreaValue, setTextAreaValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
   const handleChangeTextArea = value => {
-    setValue(value);
+    setTextAreaValue(value);
+  };
+
+  const handleChangeTextField = value => {
+    setTextFieldValue(value);
   };
 
   const handleChangeSelectBox = value => {
@@ -18,16 +30,29 @@ export default props => {
 
   return (
     <>
-      <RootStyles>
+      <Root>
         <span>Components List</span>
-        <TextArea label="label" onChange={handleChangeTextArea} value={value}></TextArea>
+        <hr width="100%" />
+        <span>TextArea</span>
+        <TextArea label="label" onChange={handleChangeTextArea} value={textAreaValue} />
+        <hr width="100%" />
+        <span>TextField</span>
+        <TextField label="label" onChange={handleChangeTextField} value={textFieldValue} />
+        <hr width="100%" />
+        <span>SelectBox</span>
         <SelectBox
           label="label"
           list={selectList}
           onChange={handleChangeSelectBox}
           value={selectValue}
         ></SelectBox>
-      </RootStyles>
+        <hr width="100%" />
+        <span>Button</span>
+        <Button variant="main">Button</Button>
+        <Button variant="lime">Button</Button>
+        <Button variant="outline">Button</Button>
+        <hr width="100%" />
+      </Root>
     </>
   );
 };
