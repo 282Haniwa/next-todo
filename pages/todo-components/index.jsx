@@ -2,17 +2,42 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
-import { TextArea, TextField, Button, Modal } from '../../components';
+import {
+  TextArea,
+  TextField,
+  SelectBox,
+  Button,
+  IconButton,
+  IconToggleButton,
+  Modal,
+} from '../../components';
 
 const Root = styled(RootStyles)`
+  margin-bottom: 600px;
   & > * {
     margin-top: 16px;
   }
 `;
 
+const selectList = [
+  {
+    text: '選択肢1',
+    value: '1',
+  },
+  {
+    text: '選択肢2',
+    value: '2',
+  },
+  {
+    text: '選択肢255',
+    value: '255',
+  },
+];
+
 export default () => {
   const [textFieldValue, setTextFieldValue] = useState('');
   const [textAreaValue, setTextAreaValue] = useState('');
+  const [selectValue, setSelectValue] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleChangeTextArea = value => {
@@ -21,6 +46,10 @@ export default () => {
 
   const handleChangeTextField = value => {
     setTextFieldValue(value);
+  };
+
+  const handleChangeSelectBox = value => {
+    setSelectValue(value);
   };
 
   const handleClickOpenModalButton = () => {
@@ -42,11 +71,25 @@ export default () => {
         <span>TextField</span>
         <TextField label="label" onChange={handleChangeTextField} value={textFieldValue} />
         <hr width="100%" />
+        <span>SelectBox</span>
+        <SelectBox
+          label="label"
+          items={selectList}
+          onChange={handleChangeSelectBox}
+          value={selectValue}
+        ></SelectBox>
+        <hr width="100%" />
         <span>Button</span>
         <Button variant="main">Button</Button>
         <Button variant="lime">Button</Button>
         <Button variant="outline">Button</Button>
         <hr width="100%" />
+        <span>IconButton</span>
+        <IconButton icon="delete" />
+        <hr width="100%" />
+        <span>IconToggleButton</span>
+        <IconToggleButton icon="delete" />
+        <IconToggleButton icon="favorite" activeColor="green" />
         <span>Modal</span>
         <Button onClick={handleClickOpenModalButton}>Open Modal</Button>
         <Modal open={modalOpen} onClose={handleCloseModal}>
