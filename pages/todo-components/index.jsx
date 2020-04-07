@@ -9,6 +9,7 @@ import {
   Button,
   IconButton,
   IconToggleButton,
+  Modal,
 } from '../../components';
 
 const Root = styled(RootStyles)`
@@ -37,6 +38,9 @@ export default () => {
   const [textFieldValue, setTextFieldValue] = useState('');
   const [textAreaValue, setTextAreaValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
+  const [modalPosition, setModalPosition] = useState('center');
+  const [modalOpen, setModalOpen] = useState(false);
+
   const handleChangeTextArea = value => {
     setTextAreaValue(value);
   };
@@ -47,6 +51,15 @@ export default () => {
 
   const handleChangeSelectBox = value => {
     setSelectValue(value);
+  };
+
+  const handleClickOpenModalButton = position => () => {
+    setModalPosition(position);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -79,6 +92,26 @@ export default () => {
         <span>IconToggleButton</span>
         <IconToggleButton icon="delete" />
         <IconToggleButton icon="favorite" activeColor="green" />
+        <hr width="100%" />
+        <span>Modal</span>
+        <Button variant="main" onClick={handleClickOpenModalButton('center')}>
+          Center
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('top')}>
+          Top
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('right')}>
+          Right
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('bottom')}>
+          Bottom
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('left')}>
+          Left
+        </Button>
+        <Modal position={modalPosition} open={modalOpen} onClose={handleCloseModal}>
+          Modal
+        </Modal>
         <hr width="100%" />
       </Root>
     </>
