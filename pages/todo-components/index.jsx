@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
-import { TextArea, TextField, SelectBox, Button } from '../../components';
+import {
+  TextArea,
+  TextField,
+  SelectBox,
+  Button,
+  IconButton,
+  IconToggleButton,
+} from '../../components';
 
 const Root = styled(RootStyles)`
+  margin-bottom: 600px;
   & > * {
     margin-top: 16px;
   }
@@ -64,6 +72,13 @@ export default () => {
         <Button variant="main">Button</Button>
         <Button variant="lime">Button</Button>
         <Button variant="outline">Button</Button>
+        <hr width="100%" />
+        <span>IconButton</span>
+        <IconButton icon="delete" />
+        <hr width="100%" />
+        <span>IconToggleButton</span>
+        <IconToggleButton icon="delete" />
+        <IconToggleButton icon="favorite" activeColor="green" />
         <hr width="100%" />
       </Root>
     </>
