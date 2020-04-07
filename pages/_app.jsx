@@ -19,6 +19,7 @@ const theme = {
     black: '#00214D',
     gray: '#888888',
     lime: '#00EBC7',
+    paper: '#FFFFFF',
   },
 };
 

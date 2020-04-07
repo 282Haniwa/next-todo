@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
-import { TextArea, TextField, Button } from '../../components';
+import { TextArea, TextField, Button, Modal } from '../../components';
 
 const Root = styled(RootStyles)`
   & > * {
@@ -13,12 +13,22 @@ const Root = styled(RootStyles)`
 export default () => {
   const [textFieldValue, setTextFieldValue] = useState('');
   const [textAreaValue, setTextAreaValue] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+
   const handleChangeTextArea = value => {
     setTextAreaValue(value);
   };
 
   const handleChangeTextField = value => {
     setTextFieldValue(value);
+  };
+
+  const handleClickOpenModalButton = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -36,6 +46,12 @@ export default () => {
         <Button variant="main">Button</Button>
         <Button variant="lime">Button</Button>
         <Button variant="outline">Button</Button>
+        <hr width="100%" />
+        <span>Modal</span>
+        <Button onClick={handleClickOpenModalButton}>Open Modal</Button>
+        <Modal open={modalOpen} onClose={handleCloseModal}>
+          Modal
+        </Modal>
         <hr width="100%" />
       </Root>
     </>
