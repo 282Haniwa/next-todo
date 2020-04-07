@@ -38,6 +38,7 @@ export default () => {
   const [textFieldValue, setTextFieldValue] = useState('');
   const [textAreaValue, setTextAreaValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
+  const [modalPosition, setModalPosition] = useState('center');
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleChangeTextArea = value => {
@@ -52,7 +53,8 @@ export default () => {
     setSelectValue(value);
   };
 
-  const handleClickOpenModalButton = () => {
+  const handleClickOpenModalButton = position => () => {
+    setModalPosition(position);
     setModalOpen(true);
   };
 
@@ -92,8 +94,22 @@ export default () => {
         <IconToggleButton icon="favorite" activeColor="green" />
         <hr width="100%" />
         <span>Modal</span>
-        <Button onClick={handleClickOpenModalButton}>Open Modal</Button>
-        <Modal open={modalOpen} onClose={handleCloseModal}>
+        <Button variant="main" onClick={handleClickOpenModalButton('center')}>
+          Center
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('top')}>
+          Top
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('right')}>
+          Right
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('bottom')}>
+          Bottom
+        </Button>
+        <Button variant="main" onClick={handleClickOpenModalButton('left')}>
+          Left
+        </Button>
+        <Modal position={modalPosition} open={modalOpen} onClose={handleCloseModal}>
           Modal
         </Modal>
         <hr width="100%" />

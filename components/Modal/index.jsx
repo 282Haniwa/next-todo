@@ -12,23 +12,27 @@ const Modal = styled.div`
       case 'top':
         style = css`
           top: 0;
+          left: 0;
           width: 100vw;
         `;
         break;
       case 'bottom':
         style = css`
+          left: 0;
           bottom: 0;
           width: 100vw;
         `;
         break;
       case 'left':
         style = css`
+          top: 0;
           left: 0;
           height: 100vh;
         `;
         break;
       case 'right':
         style = css`
+          top: 0;
           right: 0;
           height: 100vh;
         `;
