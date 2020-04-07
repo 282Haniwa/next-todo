@@ -90,6 +90,7 @@ export default () => {
         <span>IconToggleButton</span>
         <IconToggleButton icon="delete" />
         <IconToggleButton icon="favorite" activeColor="green" />
+        <hr width="100%" />
         <span>Modal</span>
         <Button onClick={handleClickOpenModalButton}>Open Modal</Button>
         <Modal open={modalOpen} onClose={handleCloseModal}>
