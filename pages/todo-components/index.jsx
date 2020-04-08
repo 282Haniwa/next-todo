@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
 import {
@@ -10,6 +9,8 @@ import {
   IconButton,
   IconToggleButton,
   Modal,
+  SideMenu,
+  MenuItem,
 } from '../../components';
 
 const Root = styled(RootStyles)`
@@ -33,6 +34,8 @@ const selectList = [
     value: '255',
   },
 ];
+
+const menuItems = ['menu1', 'menu2', 'menu3'];
 
 export default () => {
   const [textFieldValue, setTextFieldValue] = useState('');
@@ -112,6 +115,9 @@ export default () => {
         <Modal position={modalPosition} open={modalOpen} onClose={handleCloseModal}>
           Modal
         </Modal>
+        <hr width="100%" />
+        <span>SideMenu</span>
+        <SideMenu categories={menuItems} selected="All" />
         <hr width="100%" />
       </Root>
     </>

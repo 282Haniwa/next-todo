@@ -21,6 +21,10 @@ const theme = {
     lime: '#00EBC7',
     paper: '#FFFFFF',
   },
+  hover: {
+    color: 'rgba(0, 0, 0, 0.1)',
+    transition: 'background-color 0.2s ease',
+  },
 };
 
 export default class MyApp extends App {
