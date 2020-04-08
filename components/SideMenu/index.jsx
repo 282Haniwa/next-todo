@@ -1,5 +1,5 @@
 import React, { Children, cloneElement, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import MenuItemComponent from '../MenuItem';
 import Button from '../Button';
 import LogoSvg from '../../resources/logo/logo.svg';

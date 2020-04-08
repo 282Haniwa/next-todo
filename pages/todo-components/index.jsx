@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { RootStyles } from '../../styles/common';
 import {
   TextArea,
