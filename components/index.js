@@ -5,3 +5,5 @@ export { default as TextArea } from './TextArea';
 export { default as TextField } from './TextField';
 export { default as SelectBox } from './SelectBox';
 export { default as Modal } from './Modal';
+export { default as SideMenu } from './SideMenu';
+export { default as MenuItem } from './MenuItem';
